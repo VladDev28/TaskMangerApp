@@ -30,9 +30,9 @@ public class Task {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "list_id", nullable = false)
-    private TaskLists taskList;
+    private TaskList taskList;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by", nullable = false)
-    private Users createdBy;
+    private User createdBy;
 }

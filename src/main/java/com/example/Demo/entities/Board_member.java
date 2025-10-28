@@ -9,8 +9,8 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 @Builder
-@Table(name = "board_members")
-public class Board_members {
+@Table(name = "board_member")
+public class Board_member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class Board_members {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_id", nullable = false)
-    private Boards board;
+    private Board board;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_id", nullable = false)
-    private Users user;
+    private User user;
 
     @Column(nullable = false)
     private String role = "MEMBER";
